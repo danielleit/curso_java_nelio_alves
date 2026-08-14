@@ -29,13 +29,27 @@ public class Main {
         System.out.printf("Digite o ID do funcionário que deseja aumentar o salário: ");
         int id = scan.nextInt();
 
-        Funcionario funcionario = findFuncionarioById(funcionarios, id);
-        if (funcionario != null) {
-            System.out.printf("Digite o valor do aumento: ");
-            funcionario.aumentarSalario(scan.nextDouble());
+        Funcionario funcionario1 = findFuncionarioByIdMethod1(funcionarios, id);
+        if (funcionario1 != null) {
+            System.out.printf("Digite o valor do 1º aumento do funcionário %s: ", funcionario1.getNome());
+            funcionario1.aumentarSalario(scan.nextDouble());
             listaDeFuncionariosToString(funcionarios);
         } else {
             System.out.println("Funcionário não encontrado.");
+            listaDeFuncionariosToString(funcionarios);
+        }
+
+        Integer index = findFuncionarioByIdMethod2(funcionarios, id);
+        if (index != null) {
+            System.out.printf("Digite o valor do 2º aumento do funcionário %s: ", funcionarios.get(index).getNome());
+            funcionarios.get(index).aumentarSalario(scan.nextDouble());
+            listaDeFuncionariosToString(funcionarios);
+        }
+
+        Funcionario funcionario2 = findFuncionarioByIdMethod3(funcionarios, id);
+        if (funcionario2 != null) {
+            System.out.printf("Digite o valor do 3º aumento do funcionário %s: ", funcionario2.getNome());
+            funcionario2.aumentarSalario(scan.nextDouble());
             listaDeFuncionariosToString(funcionarios);
         }
 
@@ -43,7 +57,7 @@ public class Main {
 
     }
 
-    private static Funcionario findFuncionarioById(List<Funcionario> funcionarios, int id) {
+    private static Funcionario findFuncionarioByIdMethod1(List<Funcionario> funcionarios, int id) {
         for (Funcionario f : funcionarios) {
             if (f.getId() == id) {
                 return f;
@@ -51,6 +65,19 @@ public class Main {
         }
         return null;
     }
+
+    private static Integer findFuncionarioByIdMethod2(List<Funcionario> funcionarios, int id) {
+        for (int i = 0; i < funcionarios.size();i++) {
+            if(funcionarios.get(i).getId() == id) {
+                return i;
+            }
+        }
+        return null;
+    }
+
+    private static Funcionario findFuncionarioByIdMethod3(List<Funcionario> funcionarios, int id) {
+        return funcionarios.stream().filter(f -> f.getId() == id).findFirst().orElse(null);
+    }    
 
     private static void listaDeFuncionariosToString(List<Funcionario> funcionarios) {
         System.out.println("Lista de funcionários:");
