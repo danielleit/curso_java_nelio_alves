@@ -1,4 +1,4 @@
-package exercicios.enumeracoes.entities;
+package exercicios.enumeracoes.calcularsalario.entities;
 
 public class Department {
     private String name;

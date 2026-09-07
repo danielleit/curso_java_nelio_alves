@@ -1,14 +1,14 @@
-package exercicios.enumeracoes;
+package exercicios.enumeracoes.calcularsalario;
 
 import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
-import exercicios.enumeracoes.entities.Department;
-import exercicios.enumeracoes.entities.HourContract;
-import exercicios.enumeracoes.entities.Worker;
-import exercicios.enumeracoes.entities.enums.WorkerLevel;
+import exercicios.enumeracoes.calcularsalario.entities.Department;
+import exercicios.enumeracoes.calcularsalario.entities.HourContract;
+import exercicios.enumeracoes.calcularsalario.entities.Worker;
+import exercicios.enumeracoes.calcularsalario.entities.enums.WorkerLevel;
 
 public class Main {
     public static void main(String[] args) throws ParseException {
@@ -20,7 +20,7 @@ public class Main {
         System.out.println("Enter worker data: ");
         System.out.print("Name: ");
         String workerName = scan.nextLine();
-        System.out.print("Lever: ");
+        System.out.print("Level: ");
         String workerLevel = scan.nextLine();
         System.out.print("Base salary: ");
         double baseSalary = scan.nextDouble();

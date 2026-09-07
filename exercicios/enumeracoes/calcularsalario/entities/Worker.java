@@ -1,6 +1,8 @@
-package exercicios.enumeracoes.entities;
+package exercicios.enumeracoes.calcularsalario.entities;
 
-import exercicios.enumeracoes.entities.enums.WorkerLevel;
+import exercicios.enumeracoes.calcularsalario.entities.enums.WorkerLevel;
+import exercicios.enumeracoes.calcularsalario.entities.Department;
+import exercicios.enumeracoes.calcularsalario.entities.HourContract;
 
 import java.util.ArrayList;
 import java.util.Calendar;

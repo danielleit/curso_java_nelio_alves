@@ -1,4 +1,4 @@
-package exercicios.enumeracoes.entities;
+package exercicios.enumeracoes.calcularsalario.entities;
 
 import java.util.Date;
 
